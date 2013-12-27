@@ -1,0 +1,60 @@
+#!/bin/bash
+# This is a simple post deploy hook executed after your application 
+# is deployed and started.  This script gets executed directly, so 
+# it could be python, php, ruby, etc.
+echo "*************************POST DEPLOY START*********************************"
+if [ ! -d "$OPENSHIFT_DATA_DIR/errors" ]; then
+	mkdir  $OPENSHIFT_DATA_DIR/errors
+	echo "CREATED OPENSHIFT_DATA_DIR - ERRORS"
+fi
+ln -s $OPENSHIFT_DATA_DIR/errors $OPENSHIFT_JBOSSEAP_DIR/standalone/deployments/ROOT.war/errors
+echo "CSS FOLDER RESTORED "
+if [ ! -d "$OPENSHIFT_DATA_DIR/css" ]; then
+	mkdir  $OPENSHIFT_DATA_DIR/css
+	echo "CREATED OPENSHIFT_DATA_DIR - CSS"
+fi
+ln -s $OPENSHIFT_DATA_DIR/css $OPENSHIFT_JBOSSEAP_DIR/standalone/deployments/ROOT.war/css
+echo "CSS FOLDER RESTORED "
+
+if [ ! -d "$OPENSHIFT_DATA_DIR/docs" ]; then
+	mkdir  $OPENSHIFT_DATA_DIR/docs
+	echo "OPENSHIFT_DATA_DIR - DOCS CREATED"
+fi
+ln -s $OPENSHIFT_DATA_DIR/docs $OPENSHIFT_JBOSSEAP_DIR/standalone/deployments/ROOT.war/docs
+echo "DOCS FOLDER RESTORED"
+
+if [ ! -d "$OPENSHIFT_DATA_DIR/img" ]; then
+	mkdir  $OPENSHIFT_DATA_DIR/img
+	echo "OPENSHIFT_DATA_DIR - IMG CREATED"
+fi
+ln -s $OPENSHIFT_DATA_DIR/img $OPENSHIFT_JBOSSEAP_DIR/standalone/deployments/ROOT.war/img
+echo "IMG FOLDER RESTORED"
+
+if [ ! -d "$OPENSHIFT_DATA_DIR/js" ]; then	
+	mkdir  $OPENSHIFT_DATA_DIR/js
+	echo "OPENSHIFT_DATA_DIR - JS CREATED"
+fi
+ln -s $OPENSHIFT_DATA_DIR/js $OPENSHIFT_JBOSSEAP_DIR/standalone/deployments/ROOT.war/js
+echo "JS FOLDER RESTORED"
+
+if [ ! -d "$OPENSHIFT_DATA_DIR/swf" ]; then
+	mkdir  $OPENSHIFT_DATA_DIR/swf
+	echo "OPENSHIFT_DATA_DIR - SWF CREATED"
+fi
+ln -s $OPENSHIFT_DATA_DIR/swf $OPENSHIFT_JBOSSEAP_DIR/standalone/deployments/ROOT.war/swf
+echo "SWF FOLDER RESTORED"
+
+if [ ! -d "$OPENSHIFT_DATA_DIR/font" ]; then
+	mkdir  $OPENSHIFT_DATA_DIR/font
+	echo "OPENSHIFT_DATA_DIR - FONT CREATED"
+fi
+ln -s $OPENSHIFT_DATA_DIR/font $OPENSHIFT_JBOSSEAP_DIR/standalone/deployments/ROOT.war/font
+echo "FONT FOLDER RESTORED"
+
+if [ ! -d "$OPENSHIFT_DATA_DIR/cron_jboss" ]; then
+        echo "CREATE OPENSHIFT_DATA_DIR - CRON_JBOSS"
+        mkdir  $OPENSHIFT_DATA_DIR/cron_jboss
+fi
+echo "JBOSS_RESTART_LOG FOLDER RESTORED"
+echo "*************************POST DEPLOY END*********************************"
+
