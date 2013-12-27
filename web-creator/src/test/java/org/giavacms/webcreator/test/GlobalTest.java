@@ -11,13 +11,13 @@ public class GlobalTest
 {
    public static void main(String[] args)
    {
-      String username = "fiorenzino";
-      String password = "d10b01a";
+      String username = "xxxx";
+      String password = "xxx";
       String repositoryName = "project" + System.currentTimeMillis();
       String description = "description: " + repositoryName;
       String homePage = "http://giavacms.org";
-      String organization = "giavacms";
-      String team = "giavacms";
+      String organization = "xxx";
+      String team = "xxx";
       boolean isPublic = true;
       String where = "/home/fiorenzo/workspace-all/workspace-giavacms/creator/web-creator/tmp/" + repositoryName + "/";
       String pathToPomFile = "/home/fiorenzo/workspace-all/workspace-giavacms/giavacms/pom.xml";
