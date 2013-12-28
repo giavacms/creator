@@ -24,6 +24,8 @@ public class CreateRepositoryAndCommit
    static String OPENSHIFT_FOLDER = "/.openshift";
    static String DEPLOYMENTS_FOLDER = "/deployments";
    static String README_FILE = "/README.md";
+   static String SRC_FOLDER = "/src";
+   static String POM_FILE = "/pom.xml";
 
    private static String[] getFolders(String container)
    {
@@ -31,15 +33,21 @@ public class CreateRepositoryAndCommit
       folders.put(JBOSS7, new String[] {
                BASE_FOLDER + JBOSS7 + OPENSHIFT_FOLDER,
                BASE_FOLDER + JBOSS7 + DEPLOYMENTS_FOLDER,
-               BASE_FOLDER + JBOSS7 + README_FILE });
+               BASE_FOLDER + JBOSS7 + README_FILE,
+               BASE_FOLDER + JBOSS7 + SRC_FOLDER,
+               BASE_FOLDER + JBOSS7 + POM_FILE });
       folders.put(JBOSSEAP, new String[] {
                BASE_FOLDER + JBOSSEAP + OPENSHIFT_FOLDER,
                BASE_FOLDER + JBOSSEAP + DEPLOYMENTS_FOLDER,
-               BASE_FOLDER + JBOSSEAP + README_FILE });
+               BASE_FOLDER + JBOSSEAP + README_FILE,
+               BASE_FOLDER + JBOSSEAP + SRC_FOLDER,
+               BASE_FOLDER + JBOSSEAP + POM_FILE });
       folders.put(WILDFLY, new String[] {
                BASE_FOLDER + WILDFLY + OPENSHIFT_FOLDER,
                BASE_FOLDER + WILDFLY + DEPLOYMENTS_FOLDER,
-               BASE_FOLDER + WILDFLY + README_FILE });
+               BASE_FOLDER + WILDFLY + README_FILE,
+               BASE_FOLDER + WILDFLY + SRC_FOLDER,
+               BASE_FOLDER + WILDFLY + POM_FILE });
 
       if (folders.containsKey(container))
       {
